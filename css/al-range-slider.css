@@ -1,0 +1,225 @@
+.al-range-slider {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (max-width:425px) {
+    .al-range-slider {
+        font-size: 9px
+    }
+}
+
+@media screen and (max-width:375px) {
+    .al-range-slider {
+        font-size: 8px
+    }
+}
+
+.al-range-slider_disabled {
+    filter: opacity(.5);
+    pointer-events: none
+}
+
+.al-range-slider__track {
+    border-radius: 1em;
+    /* border: 1px solid #ccc; */
+    height: 0.8em;
+    background: #f5f5f5;
+    cursor: pointer;
+    height: 0.8em;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 90%;
+    order: 2;
+}
+
+.al-range-slider__grid {
+    font-size: 1.2em;
+    height: 100%;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 100%
+}
+
+.al-range-slider__grid-tick {
+    display: none;
+    height: 50%;
+    position: absolute;
+    top: 100%;
+    width: 1px
+}
+
+.al-range-slider__grid-tick:first-child,
+.al-range-slider__grid-tick:last-child {
+    background: none
+}
+
+.al-range-slider__grid-tick_long {
+    height: 100%
+}
+
+.al-range-slider__grid-mark {
+    display: inline-block;
+    padding: 0 .5em;
+    position: absolute;
+    top: 100%;
+    transform: translate(-50%, 50%);
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content
+}
+
+.al-range-slider__grid-mark_hidden {
+    display: none
+}
+
+.al-range-slider__bar {
+    background: #133763;
+    border-radius: 1em;
+    box-shadow: inset 0 0 .2em;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: 1
+}
+
+.al-range-slider_dark .al-range-slider__bar {
+    box-shadow: inset 0 0 .2em;
+}
+
+.al-range-slider__knob {
+    background: #133763;
+    box-shadow: 0px 0px 5px #000;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 2em;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    touch-action: none;
+    transform: translate(-50%, -50%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 2em;
+    z-index: 2;
+}
+
+.al-range-slider__knob:hover,
+.al-range-slider__knob_active {
+    box-shadow: 0px 0px 7px #000;
+}
+
+.al-range-slider__tooltip {
+    background: #222;
+    border-radius: .6em;
+    bottom: 200%;
+    box-shadow: inset 0 0 .2em .1em;
+    display: inline-block;
+    font-size: 1.2em;
+    left: 50%;
+    padding: .5em;
+    position: absolute;
+    transform: translateX(-50%);
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    z-index: 3;
+    display: none;
+}
+
+.al-range-slider__tooltip_hidden {
+    visibility: hidden
+}
+
+.al-range-slider__input {
+    background: inherit;
+    border: 1px solid #ccc;
+    color: #000;
+    display: block;
+    flex: 1;
+    font-family: Fira Mono, Consolas, monospace;
+    font-size: 1.2em;
+    max-height: 2.17em;
+    max-width: 3em;
+    min-width: 2em;
+    outline: none;
+    padding: .5em 1em;
+    text-align: center;
+    display: none;
+}
+
+.al-range-slider__input[name='to'] {
+    order: 3;
+}
+
+.al-range-slider__input[name='from'] {
+    order: 1;
+}
+
+.al-range-slider__input:disabled {
+    box-shadow: inset 0 0 .1rem .1rem #555;
+    pointer-events: none
+}
+
+.al-range-slider__input::-moz-placeholder {
+    color: #000;
+}
+
+.al-range-slider__input:-ms-input-placeholder {
+    color: #000;
+}
+
+.al-range-slider__input::placeholder {
+    color: #000;
+}
+
+.al-range-slider__input_hidden {
+    display: none
+}
+
+
+/* 3-8-21 */
+
+#maxValue {
+    order: 3;
+}
+
+#minValue {
+    order: 1;
+}
+
+.rangeValue {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+.rangeValue input {
+    border: 0;
+    padding: 0;
+}
+
+.rangeValue label {
+    margin: 0;
+    padding: 6px;
+    background: #f5f5f5;
+}

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" href="css/al-range-slider.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- menu -->
+    <header>
+        <section class="lb__navbar">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler" id="hamburger_menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-right" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Corporation Types </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tax Treaties </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About Us </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact Us</a>
+                        </li>
+                        <li class="nav-item __cart">
+                            <a class="nav-link" href="#">
+                                <!-- <i class="fa fa-shopping-cart" aria-hidden="true"> -->
+                                <img src="img/Shopping-cart.svg" alt="">
+                                <span class="cart_value">  0</span>
+                                </i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <div class="container-fluid admin_outer">
+        <div class="row">
+            <div class="flex bhoechie-tab-container">
+                <!-- <div class="row"> -->
+                <div class=" bhoechie-tab-menu">
+                    <button class="navbar-toggler" id="left_panel_toggler" type="button">
+                        <span class="navbar-toggler-icon">
+                            <!-- <i class="fa fa-window-close-o" aria-hidden="true"></i> -->
+                            <img class="lp_open_icon" src="img/left_panel_hamburger_icon.png" alt="Left Panel Menu Button">
+                            <img class="lp_close" src="img/close_menu_white.png" alt="Close Menu Button">
+                        </span>
+                    </button>
+                    <ul class="list-group">
+                        <li data-tab="FILTER" class="list-group-item active filter">
+                            <span class="panel_icons"><img src="img/icon-1.png" alt=""> </span>
+                            <div class="__right  ">
+                                <h4> Filter</h4>
+                            </div>
+                        </li>
+                        <li data-tab="CORP-LLC" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-2.png" alt=""> </span>
+                            <div class="__right">
+                                <h4> CORP/LLC</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn active"><i class="fa fa-check" aria-hidden="true"></i> Corporation</button>
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> LCC</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="SOLE-SHAREHOLERR" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-3.png" alt=""> </span>
+                            <div class="__right">
+                                <h4> Sole Shareholders</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn active"><i class="fa fa-check" aria-hidden="true"></i>min shareholders </button>
+                                    <button class="btn "><i class="fa fa-check" aria-hidden="true"></i>min directors </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="CORP-OWNERSHIP" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-4.png" alt=""> </span>
+                            <div class="__right">
+                                <h4> Corp Ownership</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Local directors</button>
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Local shareholders</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="NO-LOCAL-REQUIREMENTS" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-5.png" alt=""> </span>
+                            <div class="__right">
+                                <h4> No local Requirements</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i>Local directors </button>
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Local shareholders</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="OFFSHORE-INCOME" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-6.png" alt=""> </span>
+                            <div class="__right">
+                                <h4> Offshore Income</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Local directors</button>
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i>Local shareholders </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="EASY-COMPLIANCE" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-7.png" alt=""> </span>
+                            <div class="__right">
+                                <h4>Easy Compliance</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i>Annual return </button>
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Audited accounts</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="EASY-TRANSFER" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-8.png" alt=""> </span>
+                            <div class="__right">
+                                <h4> Easy Transfer</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Redomiciliation</button>
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Exchange</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="PRIVACY" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-9.png" alt=""> </span>
+                            <div class="__right">
+                                <h4>Privacy</h4>
+                                <div class="btn-group flex">
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Directors disclosure</button>
+                                    <button class="btn"><i class="fa fa-check" aria-hidden="true"></i> Shareholders disclosure</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="HAS-A-TAX-TREATY-WITH" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-10.png" alt=""></span>
+                            <div class="__right">
+                                <h4>Has a Tax Treaty With</h4>
+                                <div class="btn-group flex">
+                                    <select name="" id="" class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                        </select>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="CORPORATE-TAX-RATES" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-10.png" alt=""></span>
+                            <div class="__right">
+                                <h4>Corporate Tax Rates</h4>
+                                <div class="btn-group flex">
+                                    <div class="js-example-class"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-tab="HAS-A-TAX-TREATY-WITH2" class="list-group-item ">
+                            <span class="panel_icons"><img src="img/icon-10.png" alt=""></span>
+                            <div class="__right">
+                                <h4> Has a Tax Treaty With</h4>
+                                <div class="btn-group flex">
+                                    <select name="" id="" class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="">1</option>
+                                            <option value="">2</option>
+                                            <option value="">3</option>
+                                            <option value="">4</option>
+                                        </select>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class=" bhoechie-tab">
+                    <!-- flight section -->
+                    <div class="tab_inner_container">
+                        <!-- top panel -->
+                        <div class="top_panel">
+                            <div class="row flex">
+                                <div class="__title">
+                                    <div class="heading"> Corporation Types </div>
+                                </div>
+                                <div class=" view_options">
+                                    <button class=" btn grid__btn grid_view active" data-target="grid_view">Grid View</button>
+                                    <button class=" btn list__btn list_view" data-target="list_view">List View</button>
+                                    <button class=" btn tax__btn tax_view" data-target="tax_view">Tax View</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="FILTER" class="bhoechie-tab-content active">
+                            <div class="view_container">
+                                <div class="view_tabs active" id="grid_view">
+                                    <ul class="lics__box flex">
+                                        <li>
+                                            <div class="__baner">
+                                                <img src="img/lics_box_bg_1.png" alt="">
+                                                <button class="btn __contact_us">Contact Us</button>
+                                            </div>
+                                            <div class="__content">
+                                                <div class="__flag">
+                                                    <img src="img/dubai-flag.png" alt="">
+                                                </div>
+                                                <h2 class="__country sub-heading">Dubai (Jebal Ali)</h2>
+                                                <div class="flex  cun_row __entity">
+                                                    <div class="__left">Entity </div>
+                                                    <div class="__right">NRDC </div>
+                                                </div>
+                                                <div class="flex cun_row __tax_rate">
+                                                    <div class="__left">Tax Rate </div>
+                                                    <div class="__right">0%</div>
+                                                </div>
+                                                <div class="flex cun_row __good_for">
+                                                    <div class="__left">Good For</div>
+                                                    <div class="__right __fullWidth flex">
+                                                        <div class="btn_grp">
+                                                            <div class="btn">Merchant Accounts</div>
+                                                            <div class="btn">Ecommerece</div>
+                                                            <div class="btn">Reputation</div>
+                                                            <div class="btn">Venture Capital</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex cun_row __legal_basis">
+                                                    <div class="__left">Legal Elements</div>
+                                                    <div class="__right __fullWidth">
+                                                        <p>Common law for corporate matters</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="__baner">
+                                                <img src="img/lics_box_bg_2.png" alt="">
+                                                <button class="btn __contact_us">Contact Us</button>
+                                            </div>
+                                            <div class="__content">
+                                                <div class="__flag">
+                                                    <img src="img/aus-flag.png" alt="">
+                                                </div>
+                                                <h2 class="__country sub-heading">Australia</h2>
+                                                <div class="flex  cun_row __entity">
+                                                    <div class="__left">Entity </div>
+                                                    <div class="__right">NRDC </div>
+                                                </div>
+                                                <div class="flex cun_row __tax_rate">
+                                                    <div class="__left">Tax Rate </div>
+                                                    <div class="__right">0%</div>
+                                                </div>
+                                                <div class="flex cun_row __good_for">
+                                                    <div class="__left">Good For</div>
+                                                    <div class="__right __fullWidth flex">
+                                                        <div class="btn_grp">
+                                                            <div class="btn">Merchant Accounts</div>
+                                                            <div class="btn">Ecommerece</div>
+                                                            <div class="btn">Reputation</div>
+                                                            <div class="btn">Venture Capital</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex cun_row __legal_basis">
+                                                    <div class="__left">Legal Elements</div>
+                                                    <div class="__right __fullWidth">
+                                                        <p>Common law for corporate matters</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="__baner">
+                                                <img src="img/lics_box_bg_3.png" alt="">
+                                                <button class="btn __contact_us">Contact Us</button>
+                                            </div>
+                                            <div class="__content">
+                                                <div class="__flag">
+                                                    <img src="img/burmuda-flag.png" alt="">
+                                                </div>
+                                                <h2 class="__country sub-heading">Dubai (Jebal Ali)</h2>
+                                                <div class="flex  cun_row __entity">
+                                                    <div class="__left">Entity </div>
+                                                    <div class="__right">NRDC </div>
+                                                </div>
+                                                <div class="flex cun_row __tax_rate">
+                                                    <div class="__left">Tax Rate </div>
+                                                    <div class="__right">0%</div>
+                                                </div>
+                                                <div class="flex cun_row __good_for">
+                                                    <div class="__left">Good For</div>
+                                                    <div class="__right __fullWidth flex">
+                                                        <div class="btn_grp">
+                                                            <div class="btn">Merchant Accounts</div>
+                                                            <div class="btn">Ecommerece</div>
+                                                            <div class="btn">Reputation</div>
+                                                            <div class="btn">Venture Capital</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex cun_row __legal_basis">
+                                                    <div class="__left">Legal Elements</div>
+                                                    <div class="__right __fullWidth">
+                                                        <p>Common law for corporate matters</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="__baner">
+                                                <img src="img/lics_box_bg_1.png" alt="">
+                                                <button class="btn __contact_us">Contact Us</button>
+                                            </div>
+                                            <div class="__content">
+                                                <div class="__flag">
+                                                    <img src="img/dubai-flag.png" alt="">
+                                                </div>
+                                                <h2 class="__country sub-heading">Dubai (Jebal Ali)</h2>
+                                                <div class="flex  cun_row __entity">
+                                                    <div class="__left">Entity </div>
+                                                    <div class="__right">NRDC </div>
+                                                </div>
+                                                <div class="flex cun_row __tax_rate">
+                                                    <div class="__left">Tax Rate </div>
+                                                    <div class="__right">0%</div>
+                                                </div>
+                                                <div class="flex cun_row __good_for">
+                                                    <div class="__left">Good For</div>
+                                                    <div class="__right __fullWidth flex">
+                                                        <div class="btn_grp">
+                                                            <div class="btn">Merchant Accounts</div>
+                                                            <div class="btn">Ecommerece</div>
+                                                            <div class="btn">Reputation</div>
+                                                            <div class="btn">Venture Capital</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex cun_row __legal_basis">
+                                                    <div class="__left">Legal Elements</div>
+                                                    <div class="__right __fullWidth">
+                                                        <p>Common law for corporate matters</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="__baner">
+                                                <img src="img/lics_box_bg_2.png" alt="">
+                                                <button class="btn __contact_us">Contact Us</button>
+                                            </div>
+                                            <div class="__content">
+                                                <div class="__flag">
+                                                    <img src="img/aus-flag.png" alt="">
+                                                </div>
+                                                <h2 class="__country sub-heading">Dubai (Jebal Ali)</h2>
+                                                <div class="flex  cun_row __entity">
+                                                    <div class="__left">Entity </div>
+                                                    <div class="__right">NRDC </div>
+                                                </div>
+                                                <div class="flex cun_row __tax_rate">
+                                                    <div class="__left">Tax Rate </div>
+                                                    <div class="__right">0%</div>
+                                                </div>
+                                                <div class="flex cun_row __good_for">
+                                                    <div class="__left">Good For</div>
+                                                    <div class="__right __fullWidth flex">
+                                                        <div class="btn_grp">
+                                                            <div class="btn">Merchant Accounts</div>
+                                                            <div class="btn">Ecommerece</div>
+                                                            <div class="btn">Reputation</div>
+                                                            <div class="btn">Venture Capital</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex cun_row __legal_basis">
+                                                    <div class="__left">Legal Elements</div>
+                                                    <div class="__right __fullWidth">
+                                                        <p>Common law for corporate matters</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="__baner">
+                                                <img src="img/lics_box_bg_3.png" alt="">
+                                                <button class="btn __contact_us">Contact Us</button>
+                                            </div>
+                                            <div class="__content">
+                                                <div class="__flag">
+                                                    <img src="img/burmuda-flag.png" alt="">
+                                                </div>
+                                                <h2 class="__country sub-heading">Dubai (Jebal Ali)</h2>
+                                                <div class="flex  cun_row __entity">
+                                                    <div class="__left">Entity </div>
+                                                    <div class="__right">NRDC </div>
+                                                </div>
+                                                <div class="flex cun_row __tax_rate">
+                                                    <div class="__left">Tax Rate </div>
+                                                    <div class="__right">0%</div>
+                                                </div>
+                                                <div class="flex cun_row __good_for">
+                                                    <div class="__left">Good For</div>
+                                                    <div class="__right __fullWidth flex">
+                                                        <div class="btn_grp">
+                                                            <div class="btn">Merchant Accounts</div>
+                                                            <div class="btn">Ecommerece</div>
+                                                            <div class="btn">Reputation</div>
+                                                            <div class="btn">Venture Capital</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex cun_row __legal_basis">
+                                                    <div class="__left">Legal Elements</div>
+                                                    <div class="__right __fullWidth">
+                                                        <p>Common law for corporate matters</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="view_tabs" id="list_view">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Jurisdiction</th>
+                                                    <th>Entity</th>
+                                                    <th>Tax Rate</th>
+                                                    <th>Good For</th>
+                                                    <th>Legal Elements</th>
+                                                    <th>Incorporation Rates</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><img src="img/flag-1.png" alt="flag"> Spain</td>
+                                                    <td>CA</td>
+                                                    <td>25%</td>
+                                                    <td>
+                                                        <div class="btn_grp">
+                                                            <button class="btn">Merchant Accounts</button>
+                                                            <button class="btn">Ecommerece</button>
+                                                            <button class="btn">Reputation</button>
+                                                            <button class="btn">Venture Capital</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Common law for corporate matters</td>
+                                                    <td><button class="btn tbl_contact_us">Contact Us</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="img/flag-2.png" alt="flag"> Dubai (Jebal Ali)</td>
+                                                    <td>NRDC</td>
+                                                    <td>0%</td>
+                                                    <td>
+                                                        <div class="btn_grp">
+                                                            <button class="btn no-tax">No Tax</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Common law for corporate matters</td>
+                                                    <td><button class="btn tbl_contact_us">Contact Us</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="img/flag-3.png" alt="flag"> Anguilla</td>
+                                                    <td>PTY LTD</td>
+                                                    <td>30%</td>
+                                                    <td>
+                                                        <div class="btn_grp">
+                                                            <button class="btn">Merchant Accounts</button>
+                                                            <button class="btn">Ecommerece</button>
+                                                            <button class="btn">Reputation</button>
+                                                            <button class="btn">Venture Capital</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Common law for corporate matters</td>
+                                                    <td><button class="btn tbl_contact_us">Contact Us</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="img/flag-4.png" alt="flag"> Bermuda</td>
+                                                    <td>LLC</td>
+                                                    <td>0%</td>
+                                                    <td>
+                                                        <div class="btn_grp">
+                                                            <button class="btn">Merchant Accounts</button>
+                                                            <button class="btn">Ecommerece</button>
+                                                            <button class="btn">Reputation</button>
+                                                            <button class="btn">Venture Capital</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Common law for corporate matters</td>
+                                                    <td><button class="btn tbl_contact_us">Contact Us</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="img/flag-5.png" alt="flag"> switzerland</td>
+                                                    <td>GMBS,SARL</td>
+                                                    <td>11.91%</td>
+                                                    <td>
+                                                        <div class="btn_grp">
+                                                            <button class="btn">Merchant Accounts</button>
+                                                            <button class="btn">Ecommerece</button>
+                                                            <button class="btn">Reputation</button>
+                                                            <button class="btn">Venture Capital</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Common law for corporate matters</td>
+                                                    <td><button class="btn tbl_contact_us">Contact Us</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><img src="img/flag-6.png" alt="flag"> Spain</td>
+                                                    <td>CA</td>
+                                                    <td>25%</td>
+                                                    <td>
+                                                        <div class="btn_grp">
+                                                            <button class="btn">Merchant Accounts</button>
+                                                            <button class="btn">Ecommerece</button>
+                                                            <button class="btn">Reputation</button>
+                                                            <button class="btn">Venture Capital</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>Common law for corporate matters</td>
+                                                    <td><button class="btn tbl_contact_us">Contact Us</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!-- <div class="view_tabs" id="tax_view">Tax View</div> -->
+                            </div>
+                            <!-- Pagination -->
+                            <div class="bottom_panel">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item "><a class="page-link" href="#">Previous</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- train section -->
+                        <div id="CORP-LLC" class="bhoechie-tab-content">
+                            <center>
+                                <h1>CORP-LLC</h1>
+                            </center>
+                        </div>
+                        <!-- hotel search -->
+                        <div id="SOLE-SHAREHOLERR" class="bhoechie-tab-content">
+                            <center>
+                                <h1>SOLE-SHAREHOLERR</h1>
+                            </center>
+                        </div>
+                        <div id="CORP-OWNERSHIP" class="bhoechie-tab-content">
+                            <center>
+                                <h1>CORP-OWNERSHIP</h1>
+                            </center>
+                        </div>
+                        <div id="NO-LOCAL-REQUIREMENTS" class="bhoechie-tab-content">
+                            <center>
+                                <h1>NO-LOCAL-REQUIREMENTS</h1>
+                            </center>
+                        </div>
+                        <div id="OFFSHORE-INCOME" class="bhoechie-tab-content">
+                            <center>
+                                <h1>OFFSHORE-INCOME</h1>
+                            </center>
+                        </div>
+                        <div id="EASY-COMPLIANCE" class="bhoechie-tab-content">
+                            <center>
+                                <h1>EASY-COMPLIANCE</h1>
+                            </center>
+                        </div>
+                        <div id="PRIVACY" class="bhoechie-tab-content">
+                            <center>
+                                <h1>PRIVACY</h1>
+                            </center>
+                        </div>
+                        <div id="HAS-A-TAX-TREATY-WITH" class="bhoechie-tab-content">
+                            <center>
+                                <h1>HAS-A-TAX-TREATY-WITH</h1>
+                            </center>
+                        </div>
+                        <div id="CORPORATE-TAX-RATES" class="bhoechie-tab-content">
+                            <center>
+                                <h1>CORPORATE-TAX-RATES</h1>
+                            </center>
+                        </div>
+                        <div id="HAS-A-TAX-TREATY-WITH2" class="bhoechie-tab-content">
+                            <center>
+                                <h1>HAS-A-TAX-TREATY-WITH2</h1>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    <!-- scroll to Top -->
+    <div class="scrollToTop" id="scrollToTop">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="footer_inner flex container">
+            <div class="row">
+                <div class="col-lg-2 col-md-12 col-sm-12 __foot_logo">
+                    <a href="index.html"><img src="img/logo.png" alt="Logo"></a>
+                </div>
+                <div class="col-lg-10 col-md-12 col-sm-12  __foot_content">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="sub-heading">Address</div>
+                            <ul>
+                                <li data-tab="" class="flex"><img src="img/home-icon.png" alt="">
+                                    <span>Far Horizon Capital Inc <br>
+                                101 Anson Road International Plaza
+                                #15-15 Singapore 07789903</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="sub-heading">Contact Us</div>
+                            <ul>
+                                <li data-tab="" class="flex">
+                                    <img src="img/message-icon.png" alt="">
+                                    <a href="mailto:support@XYZ.com">support@XYZ.com</a>
+                                </li>
+                                <li class="flex">
+                                    <img src="img/time-icon.png" alt="">
+                                    <a href="tel:">Click here to Contact us </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 social">
+                            <ul class="social_links flex">
+                                <li>
+                                    <a href="#"><img src="img/fb-logo.png" alt="Facebook"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="img/skype-logo.png" alt="Skype"></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img src="img/twitter-logo.png" alt="Twitter"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <hr>
+                        <div class="col-lg-12">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                                a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                                Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+                                PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                        <hr>
+                        <div class="copyRight center">
+                            <p>© 2021 XYZ . All Rights Reserved. Terms | Privacy Policy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/al-range-slider.js"></script>
+    <script src="js/custom-script.js"></script>
+    <script>
+    </script>
+</body>
+
+</html>

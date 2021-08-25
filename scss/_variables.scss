@@ -1,0 +1,165 @@
+//Variables
+$font-size-base: 16px;
+$font-weight-base: 400;
+$line-height-base: 1.2;
+$ff-sans-serif: "Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$ff-serif: Georgia,
+"Times New Roman",
+Times,
+serif;
+$t-duration: 0.4s;
+$shell-max-width: 1362px;
+$shell-gutter: 15px;
+$c-black: #000;
+$c-white: #fff;
+$c-base: #055590;
+$responsive-ios: 812px;
+$responsive-xxs: 576px;
+$responsive-xs: 768px;
+$responsive-sm-landscape: 812px;
+$responsive-sm: 991px;
+$responsive-md: 1200px;
+$responsive-xl: 1440px;
+$mobile-small: "(max-width: #{$responsive-xxs}) ";
+$mobile: "(max-width: #{$responsive-xs}), screen and (max-width: #{$responsive-sm-landscape}) and (orientation: landscape) ";
+$tablet-portrait: "(max-width: #{$responsive-sm}) ";
+$small-desktop: "(max-width: #{$responsive-md}) ";
+$large-desktop: "(max-width: #{$responsive-xl}) ";
+$retina: "(min-resolution: 2dppx) ";
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+$font-primary:'Poppins',
+sans-serif;
+$body-font-size: 20px;
+$body-font-size-small-desktop: 18px;
+$body-font-size-mobile: 16px;
+$body-line-height: 1.38;
+// weights
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+// spacement
+$spacement-increment: 5px;
+$spacement-xs: $spacement-increment;
+$spacement-sm: $spacement-xs+$spacement-increment;
+$spacement-md: $spacement-sm+$spacement-increment;
+$spacement-lg: $spacement-md+$spacement-increment;
+$spacement-xl: $spacement-lg+$spacement-increment;
+$spacement-xlg: $spacement-xl+$spacement-increment;
+// borders
+$border-thin: 1px;
+$border-normal: 2px;
+$border-thick: 3px;
+$borders-list: (thin $border-thin),
+(normal $border-normal),
+(thick $border-thick);
+// =============================================================================
+// COLORS
+// =============================================================================
+$color-default: #003d3f;
+$color-default-inverse: #fff;
+$color-light: #FFF;
+$color-light-inverse: #003d3f;
+$color-light-highlight: #003d3f;
+$color-light-link: #dcb553;
+$color-light-link-hover: #ff936c;
+$color-grey: #EEEEEE;
+$color-grey-inverse: #003d3f;
+$color-grey-highlight: #666;
+$color-grey-link: #9a9eaf;
+$color-grey-link-hover: #6ce1e3;
+$color-lightgrey: #E2E8EF;
+$color-lightgrey-inverse: #003d3f;
+$color-lightgrey-highlight: #333;
+$color-lightgrey-link: #ff936c;
+$color-lightgrey-link-hover: #6ce1e3;
+$color-dark: #707070;
+$color-dark-inverse: #FFF;
+$color-dark-highlight: #FFF;
+$color-dark-link: #dcb553;
+$color-dark-link-hover: #ff936c;
+$color-gold: #DCB553;
+$color-gold-inverse: #003d3f;
+$color-gold-highlight: #FFF;
+$color-gold-link: #dcb553;
+$color-gold-link-hover: #ff936c;
+$color-orange: #ff946b;
+$color-orange-inverse: #FFF;
+$color-orange-highlight: #FFF;
+$color-orange-link: #dcb553;
+$color-orange-link-hover: #ff936c;
+$color-cream: #fffdf0;
+$color-cream-inverse: #003d3f;
+$color-cream-highlight: #FFF;
+$color-cream-link: #dcb553;
+$color-cream-link-hover: #ff936c;
+// primary color
+$color-muted: #d5daf0;
+$color-font-default: #020923;
+$color-primary: #f44d40;
+$body-bg:#f5f9fc;
+$body-bg2:#F8FCFF;
+$bg-light:#fff;
+$color-blue:#49a1ff;
+$color-light-blue:#2E50C6;
+$color-black:#333333;
+$color-dark-black:#010512;
+$color-dark-blue:#030c2d;
+$color-light-gray:#666666;
+$color-primary-inverse: #fff;
+$color-primary-highlight: #fff;
+$color-primary-link: #fff;
+$color-primary-link-hover: #003d3f;
+// secondary color
+$color-secondary: #6bffe3;
+$color-secondary-inverse: #fff;
+$color-secondary-highlight: #fff;
+$color-secondary-link: #fff;
+$color-secondary-link-hover: #6bffe3;
+// colors list
+$colors-list: (primary $color-primary $color-primary-inverse $color-primary-highlight $color-primary-link $color-primary-link-hover),
+(secondary $color-secondary $color-secondary-inverse $color-secondary-highlight $color-secondary-link $color-secondary-link-hover),
+(grey $color-grey $color-grey-inverse $color-grey-highlight $color-grey-link $color-grey-link-hover),
+(dark $color-dark $color-dark-inverse $color-dark-highlight $color-dark-link $color-dark-link-hover),
+(lightgrey $color-lightgrey $color-lightgrey-inverse $color-lightgrey-highlight $color-lightgrey-link $color-lightgrey-link-hover),
+(gold $color-gold $color-gold-inverse $color-gold-highlight $color-gold-link $color-gold-link-hover),
+(orange $color-orange $color-orange-inverse $color-orange-highlight $color-orange-link $color-orange-link-hover),
+(cream $color-cream $color-cream-inverse $color-cream-highlight $color-cream-link $color-cream-link-hover),
+(light $color-light $color-light-inverse $color-light-highlight $color-light-link $color-light-link-hover);
+// =============================================================================
+// SHELL
+// =============================================================================
+$shell-size-1: 1230px;
+//$shell-size-2: 1392px;
+//$shell-size-3: 1670px;
+$shell-size-2: 1300px;
+$shell-size-3: 1300px;
+$shell-size-4: 1694px;
+$shell-size-5: 1830px;
+$shell-sizes: (size-1 $shell-size-1),
+(size-2 $shell-size-2),
+(size-3 $shell-size-3),
+(size-4 $shell-size-4),
+(size-5 $shell-size-5);
+$horizontal-alignment: left,
+right,
+center;
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px) !default;
+@include assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include assert-starts-at-zero($grid-breakpoints);
+// Layout Breakpoints from polo theme
+$breakpoint-xs: 0px; // Extra small devices
+$breakpoint-sm: 576px; // Small devices (landscape phones, 576px and up)
+$breakpoint-md: 768px; // Medium devices (tablets, 768px and up)
+$breakpoint-lg: 1024px; // Large devices (desktops, 992px and up)
+$breakpoint-xl: 1200px; // Extra large devices (large desktops, 1200px and up)

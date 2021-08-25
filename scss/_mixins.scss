@@ -1,0 +1,247 @@
+// Ascending
+// Used to evaluate Sass maps like our grid breakpoints.
+@mixin assert-ascending($map, $map-name) {
+    $prev-key: null;
+    $prev-num: null;
+    @each $key,
+    $num in $map {
+        @if $prev-num==null {
+            // Do nothing
+        }
+        @else if not comparable($prev-num, $num) {
+            @warn "Potentially invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} whose unit makes it incomparable to #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+        }
+        @else if $prev-num>=$num {
+            @warn "Invalid value for #{$map-name}: This map must be in ascending order, but key '#{$key}' has value #{$num} which isn't greater than #{$prev-num}, the value of the previous key '#{$prev-key}' !";
+        }
+        $prev-key: $key;
+        $prev-num: $num;
+    }
+}
+
+// Starts at zero
+// Another grid mixin that ensures the min-width of the lowest breakpoint starts at 0.
+@mixin assert-starts-at-zero($map) {
+    $values: map-values($map);
+    $first-value: nth($values, 1);
+    @if $first-value !=0 {
+        @warn "First breakpoint in `$grid-breakpoints` must start at 0, but starts at #{$first-value}.";
+    }
+}
+
+@mixin clearfix {
+    content: '';
+    line-height: 0;
+    display: table;
+    clear: both;
+}
+
+@mixin breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+    @media (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin breakpoint-down($name, $breakpoints: $grid-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+    @if $max==767px {
+        @media (max-width: $max), screen and (max-width: $responsive-ios) and (orientation: landscape) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+}
+
+@mixin breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+    $min: breakpoint-min($lower, $breakpoints);
+    $max: breakpoint-max($upper, $breakpoints);
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin phone-and-down {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet-and-down {
+    @media (max-width: 1198px) {
+        @content;
+    }
+}
+
+@mixin phone-and-up {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet-and-up {
+    @media (min-width: 1198px) {
+        @content;
+    }
+}
+
+@mixin display-flex() {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin display-inline-flex() {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+}
+
+@mixin flex($grow-shrink-basis) {
+    -ms-flex: $grow-shrink-basis;
+    -webkit-flex: $grow-shrink-basis;
+    flex: $grow-shrink-basis;
+}
+
+@mixin flex-shrink($shrink) {
+    -webkit-flex-shrink: $shrink;
+    -ms-flex-negative: $shrink;
+    flex-shrink: $shrink;
+}
+
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+@mixin flex-grow($grow) {
+    -webkit-flex-grow: $grow;
+    -ms-flex-positive: $grow;
+    flex-grow: $grow;
+}
+
+@mixin flex-basis($basis) {
+    -webkit-flex-basis: $basis;
+    -ms-flex-preferred-size: $basis;
+    flex-basis: $basis;
+    max-width: $basis;
+}
+
+@mixin justify-content($align) {
+    -webkit-justify-content: $align;
+    @if ($align=="flex-start") {
+        -ms-flex-pack: start;
+    }
+    @else if ($align=="flex-end") {
+        -ms-flex-pack: end;
+    }
+    @else if ($align=="space-around") {
+        -ms-flex-pack: distribute;
+    }
+    @else if ($align=="space-between") {
+        -ms-flex-pack: justify;
+    }
+    @else {
+        -ms-flex-pack: $align;
+    }
+    justify-content: $align;
+}
+
+@mixin align-content($align) {
+    -webkit-align-content: $align;
+    @if ($align=="flex-start") {
+        -ms-flex-pack: start;
+    }
+    @else if ($align=="flex-end") {
+        -ms-flex-pack: end;
+    }
+    @else if ($align=="space-around") {
+        -ms-flex-pack: distribute;
+    }
+    @else if ($align=="space-between") {
+        -ms-flex-pack: justify;
+    }
+    @else if ($align=="center") {
+        -ms-flex-pack: center;
+    }
+    @else if ($align=="stretch") {
+        -ms-flex-pack: stretch;
+    }
+    @else {
+        -ms-flex-pack: $align;
+    }
+    align-content: $align;
+}
+
+@mixin align-items($valign) {
+    -webkit-align-items: $valign;
+    @if ($valign=="flex-start") {
+        -ms-flex-align: start;
+    }
+    @else if ($valign=="flex-end") {
+        -ms-flex-align: end;
+    }
+    @else {
+        -ms-flex-align: $valign;
+    }
+    align-items: $valign;
+}
+
+@mixin align-self($valign) {
+    -webkit-align-self: $valign;
+    @if ($valign=="flex-start") {
+        -ms-flex-item-align: start;
+    }
+    @else if ($valign=="flex-end") {
+        -ms-flex-item-align: end;
+    }
+    @else {
+        -ms-flex-item-align: $valign;
+    }
+    align-self: $valign;
+}
+
+@mixin order($order) {
+    -webkit-order: $order;
+    -ms-flex-order: $order;
+    order: $order
+}
+
+@mixin grid-offset($offset) {
+    margin-bottom: -$offset;
+    &:empty {
+        margin-bottom: 0;
+    }
+    >* {
+        margin-bottom: $offset;
+    }
+}
+
+@mixin phone-and-down {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet-and-down {
+    @media (max-width: 1198px) {
+        @content;
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
